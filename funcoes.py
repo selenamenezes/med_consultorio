@@ -32,7 +32,7 @@ def cadastrar_paciente(conexao, nome, cpf, data_nascimento, telefone):
     cpf = formatar_cpf(cpf)
     telefone = formatar_telefone(telefone)
 
-    # verifica se esta formatado o telefone e o cpf
+    # verifica é valido o cpf e telefone
     if cpf and telefone: 
         # verifica se ja tem algum cpf ou telefone com o mesmo numero
         cursor.execute('SELECT cpf, telefone FROM paciente WHERE cpf = ? OR telefone = ?', (cpf, telefone,))
